@@ -13,14 +13,18 @@ Yeni başladığım projelerde her defasında adım adım yaptığım(aşağıda
 git clone git@github.com:muratbastas/prepare.git
 ```
 
+*Not :* `test` dizini `frontend.sh` dosyası çalıştırılınca oluşan projenin örneğidir. Silebilirsiniz.
+
 Bu frontend.sh dosyasını `$PATH` e ekleyerek ve ya `alias` yaparak tek komutla yeni bir proje oluşturabilirsiniz.
 
 `$PATH`'e eklemek için
 ```
 export PATH="/sh-dosyasinin-bulundugu-dizin:$PATH"
 ```
+*Not :* PATH e eklenirse `frontend.sh` şeklinde çalıştırılmalıdır. 
 
 `alias` yapmak için
 ```
 alias komutadi="source /sh-dosyasinin-bulundugu-dizin/frontend.sh"
 ```
+*Not :* alias oluşturulursa `komutadi` şeklinde çalıştırılmalıdır. 
