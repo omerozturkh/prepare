@@ -1,0 +1,12 @@
+@import 'bourbon';
+@import 'basicss';
+@import 'variables';
+@import 'mixins';
+
+body {
+    padding-top: 50px;
+}
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
