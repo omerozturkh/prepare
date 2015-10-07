@@ -6,6 +6,10 @@ if [ ! -d $DIR ]; then
     mkdir -p $DIR
     cd $DIR
 
+    touch ./.gitignore
+    echo "node_modules
+src/components/*" > ./.gitignore
+
     touch index.html
     echo "<!DOCTYPE html>
 <html lang=\"en\">
