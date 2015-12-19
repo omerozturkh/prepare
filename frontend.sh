@@ -1,5 +1,30 @@
 #!/bin/bash
 
+clear
+
+if test ! $(which brew); then
+    echo "Brew kuruluyor..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi;
+
+if test ! $(which dialog); then
+    brew install dialog
+    dialog --create-rc ~/.dialogrc
+else
+    dialog --checklist "Kurulacak bower modüllerini seçin :" 15 40 5 \
+        1 Bootstrap off \
+        2 Materializecss off \
+        3 OwlCarousel off \
+        4 Fancybox off 2> tmp
+fi;
+filename=tmp
+while read -r line
+do
+    name=$line
+    echo "Name read from file - $name"
+done < "$filename"
+exit
+
 read -p "Projenin hazırlanacağı dizin : " DIR
 
 if [ ! -d $DIR ]; then
@@ -204,8 +229,6 @@ body {
     echo "{
     \"name\": \""$DIR"\",
     \"dependencies\": {
-        \"bootstrap\": \"~3.3.5\",
-        \"font-awesome\": \"fontawesome#~4.4.0\"
     }
 }" > ./bower.json
 
@@ -213,6 +236,7 @@ body {
         echo "Bower kuruluyor..."
         sudo npm i bower -g
     fi;
+    dialog --checklist "Kurmak istediğiniz bower modüllerini seçin:" 10 40 3 1 RedHat on 2 "Ubuntu Linux" off 3 Slackware off
     bower install
     ### / bower konfigüre edildi
 
