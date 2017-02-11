@@ -223,7 +223,7 @@ body {
     fi;
 
     echo "Gulp modülleri bağlanıyor..."
-    sudo npm link gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css node-bourbon gulp-jshint gulp-concat gulp-uglify gulp-notify gulp-rename
+    sudo npm link gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css node-bourbon gulp-jshint gulp-concat gulp-uglify gulp-notify gulp-rename --save
 
     echo "gulpfile.js oluşturuluyor..."
     touch ./gulpfile.js
